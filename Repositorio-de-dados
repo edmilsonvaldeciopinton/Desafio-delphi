@@ -1,0 +1,9 @@
+# Criação do Repositório de Dados
+
+type
+  IProdutoRepository = interface
+    procedure Adicionar(Produto: TProduto);
+    procedure Atualizar(Produto: TProduto);
+    procedure Excluir(ID: Integer);
+    function Listar: TList<TProduto>;
+  end;
