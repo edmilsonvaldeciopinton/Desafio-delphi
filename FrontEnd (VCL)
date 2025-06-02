@@ -1,0 +1,16 @@
+# A interface será feita com VCL, permitindo cadastro, edição, exclusão e listagem.
+# Criação do Formulário de Cadastro
+
+procedure TFormCadastroProduto.btnSalvarClick(Sender: TObject);
+var
+  Produto: TProduto;
+begin
+  Produto := TProduto.Create;
+  try
+    Produto.Nome := edtNome.Text;
+    Produto.Preco := StrToFloat(edtPreco.Text);
+    ProdutoService.Adicionar(Produto);
+  finally
+    Produto.Free;
+  end;
+end;
