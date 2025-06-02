@@ -1,0 +1,28 @@
+# Testes Unitários com DUnitX
+# Para garantir a estabilidade do código
+
+uses
+  DUnitX.TestFramework;
+
+type
+  [TestFixture]
+  TTestProduto = class
+  public
+    [Test]
+    procedure TestAdicionarProduto;
+  end;
+
+procedure TTestProduto.TestAdicionarProduto;
+var
+  Produto: TProduto;
+begin
+  Produto := TProduto.Create;
+  try
+    Produto.Nome := 'Teste';
+    Produto.Preco := 99.99;
+    Assert.AreEqual('Teste', Produto.Nome);
+    Assert.AreEqual(99.99, Produto.Preco);
+  finally
+    Produto.Free;
+  end;
+end;
