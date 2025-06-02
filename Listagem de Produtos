@@ -1,0 +1,10 @@
+# Listagem de Produtos
+
+procedure TFormPrincipal.CarregarListaProdutos;
+var
+  Produto: TProduto;
+begin
+  lstProdutos.Items.Clear;
+  for Produto in ProdutoService.Listar do
+    lstProdutos.Items.Add(Produto.Nome + ' - R$' + FloatToStr(Produto.Preco));
+end;
