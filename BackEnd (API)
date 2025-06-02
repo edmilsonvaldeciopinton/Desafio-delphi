@@ -1,0 +1,15 @@
+# Desenvolvimento do BackEnd (API)
+# A API será construída em Delphi utilizando WebBroker ou RAD Server, conectada ao SQL Server e utilizando um ORM, como FireDAC ou TMS Aurelius.
+# Criação do Modelo de Produto:
+
+type
+  TProduto = class
+  private
+    FID: Integer;
+    FNome: String;
+    FPreco: Double;
+  public
+    property ID: Integer read FID write FID;
+    property Nome: String read FNome write FNome;
+    property Preco: Double read FPreco write FPreco;
+  end; 
