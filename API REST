@@ -1,0 +1,16 @@
+# O ORM escolhido pode ser FireDAC ou TMS Aurelius para facilitar o mapeamento objeto-relacional.
+# Criação da API REST
+
+procedure TProdutoController.AdicionarProduto(ARequest: TJSONObject);
+var
+  Produto: TProduto;
+begin
+  Produto := TProduto.Create;
+  try
+    Produto.Nome := ARequest.GetValue<string>('nome');
+    Produto.Preco := ARequest.GetValue<double>('preco');
+    FProdutoService.Adicionar(Produto);
+  finally
+    Produto.Free;
+  end;
+end;
