@@ -1,0 +1,15 @@
+# A estrutura do projeto deve seguir MVC (Model-View-Controller) para melhor separação de responsabilidades:
+/Backend
+  /Controllers
+  /Models
+  /Services
+  /Repositories
+  /Tests
+  /Config
+  main.dpr
+
+/Frontend
+  /Forms
+  /Components
+  /Services
+  main.dfm
